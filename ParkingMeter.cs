@@ -112,7 +112,7 @@ namespace ParkingMeters
 
             if(Game.IsControlJustPressed(0, (Control)74))
             {
-                var vehs = World.GetAllVehicles().Where(v => World.GetDistance(_nearestMeter.Position, v.Position) <= 2.5f);
+                var vehs = World.GetAllVehicles().Where(v => World.GetDistance(_nearestMeter.Position, v.Position) <= 4f);
                 if(vehs.Count() <= 0) { ShowNotification("No Vehicle at this ~y~Meter"); _nearestMeter = new Prop(0); _isNearMeter = false; return; }
 
                 API.TaskStartScenarioInPlace(Game.PlayerPed.Handle, "PROP_HUMAN_PARKING_METER", 0, true);
